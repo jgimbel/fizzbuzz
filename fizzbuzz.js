@@ -1,5 +1,5 @@
-module.exports = function fizzbuzz(length) {
-  const outputs = Array.from(
+const fizzbuzz = module.exports = (length)  => (
+  Array.from(
     { length },
     (_, idx) => (++idx % 15 === 0)
       ? 'FizzBuzz'
@@ -9,10 +9,8 @@ module.exports = function fizzbuzz(length) {
           ? 'Buzz'
           : idx
   )
-  outputs.map( val => console.log(val))
-  return outputs
-}
+)
 
 if(require.main === module){
-  module.exports(100)
+  fizzbuzz(100).map( val => console.log(val))
 }
